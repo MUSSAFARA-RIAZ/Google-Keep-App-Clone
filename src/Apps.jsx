@@ -14,6 +14,17 @@ export default function Apps() {
     })
 
   }
+  const ondelete=(id)=>{
+    setitem((olddata)=>olddata.filter((currentdata,index)=>{
+      return index!==id;
+
+
+
+
+    })
+    );
+
+  };
   return (
     <>
     <Header/>
@@ -27,6 +38,7 @@ export default function Apps() {
         id={index}
         title={val.title}
         content={val.content}
+        deleteitem={ondelete}
         />
 
       )
